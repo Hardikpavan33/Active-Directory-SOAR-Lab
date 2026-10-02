@@ -150,7 +150,7 @@ New-NetFirewallRule -DisplayName "Shuffle-Isolation" -Direction Outbound -Action
 
 Querying the target endpoint (192.168.65.151) verified the firewall containment rule:
 ```powershell
-Get-NetFirewallRule -DisplayName "Host-Isolation"
+Get-NetFirewallRule -DisplayName "Shuffle-Isolation"
 ```
 ```text
 Name                  : {c8796232-0b95-4ab5-9a7c-2ec8b98c8e73}
