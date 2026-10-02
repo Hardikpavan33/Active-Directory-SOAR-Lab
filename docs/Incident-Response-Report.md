@@ -77,7 +77,6 @@ index="main" EventCode="4769" "0x17"
 | rex "Client Address:\s+(?<ClientAddress>\S+)" 
 | rex "Account Name:\s+(?<TargetUserName>\S+)" 
 | stats count values(ServiceName) as Requested_Services by ClientAddress, TargetUserName
-
 ```
 
 ### 5.2 AS-REP Roasting Detection Query (DC Target)
