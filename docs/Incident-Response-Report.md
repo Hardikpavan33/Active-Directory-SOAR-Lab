@@ -87,12 +87,14 @@ index="main" EventCode="4768"
 | rex "Account Name:\s+(?<TargetUserName>\S+)" 
 | where PreAuthType="0" OR PreAuthType="0x0"
 | stats count values(TargetUserName) as Requested_Accounts by ClientAddress
+```
 
 ### 5.3 Pass-the-Hash Detection Query (DC Target)
 ```spl
 index="main" EventCode="4624" Logon_Type="3" Authentication_Package="NTLM" Account_Name!="*$"
 | stats count by ComputerName, Account_Name, Source_Network_Address, Authentication_Package 
 | sort - count
+```
 
 ### 5.4 DCSync Directory Replication Detection Query (DC Target)
 ```spl
@@ -100,6 +102,7 @@ index="main" EventCode="4662" ("1131f6aa" OR "1131f6ad" OR "DS-Replication-Get-C
 | rex "Account Name:\s+(?<SubjectUserName>\S+)"
 | where NOT match(SubjectUserName, "\$$") AND SubjectUserName!="-"
 | stats count by host, SubjectUserName
+```
 
 ### 5.5 Suspicious Recon Execution Detection Query (Win11 Workstation Target)
 ```spl
@@ -112,26 +115,31 @@ index="main" host="winserver" sourcetype="xmlwineventlog:microsoft-windows-sysmo
 | search CommandLine="*whoami*" OR CommandLine="*net user*" OR CommandLine="*nltest*"
 | table _time, host, User, Image, CommandLine 
 | sort - _time
+```
 
 ### 5.6 LSASS Memory Access Detection Query (Win11 Workstation Target)
 ```spl
 index="main" host="Win11" EventCode=10 TargetImage="*lsass.exe" (GrantedAccess="0x1fffff" OR GrantedAccess="0x1010" OR GrantedAccess="0x1410" OR GrantedAccess="0x1f0fff")
 | table _time, host, SourceImage, TargetImage, GrantedAccess, CallTrace
+```
 
 ### 5.7 UAC Bypass via Fodhelper Registry Hijacking Detection Query (Win11 Workstation Target)
 ```spl
 index="main" host="Win11" (EventCode=12 OR EventCode=13) TargetObject="*ms-settings*"
 | table _time, Image, TargetObject, Details, EventCode
+```
 
 ### 5.8 Obfuscated Powershell Script Execution Detection Query (Win11 Workstation Target)
 ```spl
 index="main" host="Win11" EventCode=4104 ("FromBase64String" OR "Invoke-Expression" OR "IEX" OR "DownloadString" OR "AmsiUtils")
 | table _time, host, EventCode, Message
+```
 
 ### 5.9 Ingress tool Transfer via LOLBAS (Bitsadmin/Certutil) Detection Query (Win11 Workstation Target)
 ```spl
 index="main" host="Win11" EventCode=1 (Image="*bitsadmin.exe*" AND (CommandLine="*/transfer*" OR CommandLine="*/addfile*")) OR (Image="*certutil.exe*" AND (CommandLine="*-urlcache*" OR CommandLine="*-split*"))
 | table _time, User, Image, CommandLine, ParentCommandLine
+```
 
 ---
 
