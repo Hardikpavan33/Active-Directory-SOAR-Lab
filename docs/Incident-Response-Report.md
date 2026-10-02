@@ -144,18 +144,22 @@ index="main" host="Win11" EventCode=1 (Image="*bitsadmin.exe*" AND (CommandLine=
 ---
 
 ## 6. SOAR Automated Containment & Isolation Verification
-
+```powershell
 New-NetFirewallRule -DisplayName "Shuffle-Isolation" -Direction Outbound -Action Block -Enabled True
+```
 
 Querying the target endpoint (192.168.65.151) verified the firewall containment rule:
-
+```powershell
+Get-NetFirewallRule -DisplayName "Host-Isolation"
+```
+```text
 Name                  : {c8796232-0b95-4ab5-9a7c-2ec8b98c8e73}
 DisplayName           : Shuffle-Isolation
 Enabled               : True
 Direction             : Outbound
 Action                : Block
 Status                : The rule was parsed successfully from the store.
-
+```
 ---
 
 ## 7. Lessons Learned & Security Recommendations
