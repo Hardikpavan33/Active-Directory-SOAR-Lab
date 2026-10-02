@@ -78,11 +78,9 @@ The simulation executed a multi-stage cyber attack mapping to the **MITRE ATT&CK
 
 ## 📂 Documentation & Resources
 
-📄 Full Incident Response Report: Comprehensive documentation detailing the executive summary, detailed timeline, MITRE ATT&CK matrix, complete custom Splunk SPL detection queries, and containment verification logs.
+* 📄 **[Full Incident Response Report](./docs/Incident-Response-Report.md)**: Comprehensive documentation detailing the executive summary, detailed timeline, MITRE ATT&CK matrix, complete custom Splunk SPL detection queries, and containment verification logs.
 
 ---
 
 ## 🚀 Quick Navigation
-
-Read the Incident Response Report
-
+* [Read the Incident Response Report](./docs/Incident-Response-Report.md)
