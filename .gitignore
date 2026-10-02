@@ -1,0 +1,12 @@
+# OS generated files
+Thumbs.db
+.DS_Store
+ehthumbs.dp
+
+# Logs and databases
+*.log
+*.sqlite
+
+# IDE/Editor configs
+.vscode/
+.idea/
