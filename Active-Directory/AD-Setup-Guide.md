@@ -86,7 +86,7 @@ To ensure maximum visibility for Splunk ingestion, high-fidelity endpoint tracin
   ```powershell
   Sysmon64.exe -i C:\Path\To\Active-Directory\GPO-Configs\Sysmon-Logging-Policy.xml
 
-* **Key Event IDs Monitored:
+* **Key Event IDs Monitored:**
 
 Event ID 1: Process Creation (capturing command-line parameters and parent process IDs).
 
