@@ -88,10 +88,10 @@ To ensure maximum visibility for Splunk ingestion, high-fidelity endpoint tracin
 
 * **Key Event IDs Monitored:**
 
-Event ID 1: Process Creation (capturing command-line parameters and parent process IDs).
+  * Event ID 1: Process Creation (capturing command-line parameters and parent process IDs).
 
-Event ID 3: Network Connections (monitoring outbound communication paths).
+  * Event ID 3: Network Connections (monitoring outbound communication paths).
 
-Event ID 10: Process Access (detecting LSASS memory read operations during credential dumping simulations).
+  * Event ID 10: Process Access (detecting LSASS memory read operations during credential dumping simulations).
 
-Event ID 4624 / 4688 / 4768 / 4769: Core Windows Security auditing events ingested for Active Directory attack detection.
+  * Event ID 4624 / 4688 / 4768 / 4769: Core Windows Security auditing events ingested for Active Directory attack detection.
